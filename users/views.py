@@ -181,6 +181,8 @@ def add_product(request):
 
     if request.method == "POST":
 
+
+
         Product.objects.create(
             name=request.POST.get('name'),
             price=safe_decimal(request.POST.get('price')),
