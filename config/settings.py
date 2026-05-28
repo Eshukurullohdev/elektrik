@@ -15,12 +15,8 @@ SECRET_KEY = 'django-insecure-8atdkg9uk949zrswv8))6uv@nxi(_7waieg3p#cbk@c96%g$vi
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "elektrikjan.up.railway.app",
-    "localhost",
-    "127.0.0.1",
+    '*',
 ]
-
-
 
 CSRF_TRUSTED_ORIGINS = [
     "https://elektrikjan.up.railway.app"
@@ -124,10 +120,16 @@ USE_I18N = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+import os
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
 
 
 # Default primary key field type
