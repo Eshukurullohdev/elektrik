@@ -118,6 +118,7 @@ class Product(models.Model):
         validators=[MinValueValidator(0)]
     )
 
+
     phone = models.CharField(max_length=20, blank=True)
 
     is_sold = models.BooleanField(default=False)
@@ -126,3 +127,8 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.category}"
+
+
+
+
+        
